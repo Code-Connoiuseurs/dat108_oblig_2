@@ -4,11 +4,11 @@ public class Melding {
 	
 	private String tekst = "Hallo verden!";
 
-	public String getTekst() {
+	public synchronized String getTekst() {
 		return tekst;
 	}
 
-	public void setTekst(String tekst) {
+	public synchronized void setTekst(String tekst) {
 		this.tekst = tekst;
 	}
 }

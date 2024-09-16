@@ -17,7 +17,7 @@ public class Henter extends Thread {
 			try {
 				nyTekst = JOptionPane.showInputDialog("Skriv inn tekst:");
 			} catch (Exception e) {}
-			if (nyTekst == null || nyTekst.equals("quit")) {
+			if (nyTekst == null || nyTekst.equalsIgnoreCase("quit")) {
 				System.out.println("Hade :)");
 				System.exit(0);
 			}
