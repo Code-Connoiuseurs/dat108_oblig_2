@@ -21,11 +21,15 @@ public class HamburgerBrett {
 		return brett.size();
 	}
 
-	public boolean leggTil(Hamburger burger) {
-		if (antall() >= KAPASITET) return false;
+	public Hamburger leggTil(Hamburger burger) {
+		if (erFult()) return null;
 		burger.setNummer(hamburgerNr.getAndIncrement());
 		brett.add(burger);
-		return true;
+		return burger;
+	}
+
+	public boolean erFult() {
+		return antall() >= KAPASITET;
 	}
 
 	public Hamburger fjern() {

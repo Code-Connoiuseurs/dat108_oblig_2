@@ -18,29 +18,22 @@ public class Kokk implements Runnable {
 	}
 
 	public void run() {
-		while (true) 
+		while (true)
 			try {
 				synchronized (brett) {
 					Thread.sleep(random.nextInt(2000, 6000));
-					Hamburger burger = new Hamburger();
-					boolean lagtTil = false;
-					while (!lagtTil) {
-						try {
-							lagtTil = brett.leggTil(burger);
-							if (lagtTil) {
-								System.out.println(this.getNavn() + "(kokk) har lagt til burger ◖" + burger.getNummer() + "◗ brettet: " + brett.toString());
-								brett.notify();
-							} else {
-								System.out.println(this.getNavn() + "(kokk) kan ikke legge på burger fordi brettet er fult");
-								brett.wait();
-							}
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
+					if (!brett.erFult()) {
+						Hamburger burger = brett.leggTil(new Hamburger());
+						System.out.println(this.getNavn() + "(kokk) har lagt til burger ◖" + burger.getNummer()
+								+ "◗ brettet: " + brett.toString());
+						brett.notify();
+					} else {
+						System.out.println(this.getNavn() + "(kokk) kan ikke legge på burger fordi brettet er fult");
+						brett.wait();
 					}
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}
 	}
+}
