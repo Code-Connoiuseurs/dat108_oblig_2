@@ -1,4 +1,6 @@
-package oppgave_2;
+package oppgave_3;
+
+import java.util.Arrays;
 
 public class Main {
 	static final String[] kokker = { "Anne", "Erik", "Knut" };
@@ -6,9 +8,8 @@ public class Main {
 	static final int KAPASITET = 4;
 
 	public static void main(String[] args) {
-		skrivUtHeader(kokker, servitorer, KAPASITET);
+		skrivUtHeader();
 		HamburgerBrett brett = new HamburgerBrett(KAPASITET);
-
 		for (String navn : kokker) {
 			new Thread(new Kokk(brett, navn)).start();
 		}
@@ -17,8 +18,14 @@ public class Main {
 		}
 	}
 
-	private static void skrivUtHeader(String[] kokker, String[] servitorer, int kapasitet) {
-		System.out.println("La kaoset begynne");
+	private static void skrivUtHeader() {
+		System.out.println(
+			"I denne simuleringen har vi\n"
+			+ kokker.length + " kokker " + Arrays.toString(kokker) + "\n"
+			+ servitorer.length + " servitører " + Arrays.toString(servitorer) + "\n"
+			+ "Kapasiteten er " + KAPASITET + "\n"
+			+ "La kaoset begynne!\n"
+		);
 	}
 
 }
