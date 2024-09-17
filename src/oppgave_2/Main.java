@@ -8,7 +8,7 @@ public class Main {
 	static final int KAPASITET = 4;
 
 	public static void main(String[] args) {
-		skrivUtHeader(kokker, servitorer, KAPASITET);
+		skrivUtHeader();
 		HamburgerBrett brett = new HamburgerBrett(KAPASITET);
 
 		for (String navn : kokker) {
