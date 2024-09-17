@@ -22,13 +22,13 @@ public class Kokk implements Runnable {
 			try {
 				synchronized (brett) {
 					Thread.sleep(random.nextInt(2000, 6000));
-					if (!brett.erFult()) {
+					if (!brett.erFullt()) {
 						Hamburger burger = brett.leggTil(new Hamburger());
-						System.out.println(this.getNavn() + "(kokk) har lagt til burger ◖" + burger.getNummer()
-								+ "◗ brettet: " + brett.toString());
+						System.out.println(this.getNavn() + "(kokk) har lagt til burger " + burger.toString()
+								+ ". Brettet: " + brett.toString());
 						brett.notify();
 					} else {
-						System.out.println(this.getNavn() + "(kokk) kan ikke legge på burger fordi brettet er fult");
+						System.out.println(this.getNavn() + "(kokk) kan ikke legge på burger fordi brettet er fullt.");
 						brett.wait();
 					}
 				}

@@ -22,13 +22,13 @@ public class HamburgerBrett {
 	}
 
 	public Hamburger leggTil(Hamburger burger) {
-		if (erFult()) return null;
+		if (erFullt()) return null;
 		burger.setNummer(hamburgerNr.getAndIncrement());
 		brett.add(burger);
 		return burger;
 	}
 
-	public boolean erFult() {
+	public boolean erFullt() {
 		return antall() >= KAPASITET;
 	}
 

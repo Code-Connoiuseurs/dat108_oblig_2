@@ -21,9 +21,9 @@ public class Main {
 
 	private static void skrivUtHeader() {
 		System.out.println(
-			"I denne simuleringen har vi\n"
-			+ kokker.length + " kokker " + Arrays.toString(kokker) + "\n"
-			+ servitorer.length + " servitører " + Arrays.toString(servitorer) + "\n"
+			"I denne simuleringen har vi\n\t"
+			+ kokker.length + " kokker " + Arrays.toString(kokker) + "\n\t"
+			+ servitorer.length + " servitører " + Arrays.toString(servitorer) + "\n\t"
 			+ "Kapasiteten er " + KAPASITET + "\n"
 			+ "La kaoset begynne!\n"
 		);

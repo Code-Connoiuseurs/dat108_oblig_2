@@ -25,10 +25,10 @@ public class Servitor extends Thread {
 					Thread.sleep(random.nextInt(2000, 6000));
 						Hamburger burger = brett.fjern();
 						if (burger != null) {
-							System.out.println(this.getNavn() + "(servitør) tar av hamburger ◖" + burger.getNummer() + "◗ brettet: " + brett.toString());
+							System.out.println(this.getNavn() + "(servitør) tar av hamburger " + burger.toString() + ". Brettet: " + brett.toString());
 							brett.notify();
 						} else {
-							System.out.println(this.getNavn() + "(servitør) har ingen burgere å servere og tar seg derfor en lur");
+							System.out.println(this.getNavn() + "(servitør) har ingen burgere å servere og tar seg derfor en lur.");
 							brett.wait();
 						}
 					}
