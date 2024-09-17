@@ -22,7 +22,7 @@ public class Kokk implements Runnable {
 			try {
 				Thread.sleep(random.nextInt(2000, 6000));
 				Hamburger burger = brett.leggTil(new Hamburger());
-				System.out.println(this.getNavn() + "(kokk) har lagt til burger ◖" + burger.getNummer() + "◗ brettet: " + brett.toString());
+				System.out.println(this.getNavn() + "(kokk) har lagt til burger " + burger.toString() + " brettet: " + brett.toString());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

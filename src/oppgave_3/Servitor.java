@@ -22,7 +22,7 @@ public class Servitor extends Thread {
 			try {
 				Thread.sleep(random.nextInt(2000, 6000));
 				Hamburger burger = brett.fjern();
-				System.out.println(this.getNavn() + "(servitør) tar av hamburger ◖" + burger.getNummer() + "◗ brettet: " + brett.toString());
+				System.out.println(this.getNavn() + "(servitør) tar av hamburger " + burger.toString() + " brettet: " + brett.toString());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
