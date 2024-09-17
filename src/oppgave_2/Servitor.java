@@ -25,7 +25,6 @@ public class Servitor implements Runnable {
 					Thread.sleep(ventetid);
 					Hamburger fjernet = brett.fjern();
 					if (fjernet == null) {
-//					try {
 						System.out.println(LocalTime.now().truncatedTo(ChronoUnit.SECONDS) + " " + this.getNavn()
 								+ " (Servitor) ønsker å ta hamburger, men brett tomt. Venter!");
 						brett.wait();

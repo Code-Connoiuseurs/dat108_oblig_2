@@ -23,18 +23,18 @@ public class Kokk implements Runnable {
 
 				try {
 					Thread.sleep(ventetid);
-
-					if (!brett.erFull()) {
-						Hamburger hamburger = new Hamburger();
-						brett.leggTil(hamburger);
-						System.out.println(LocalTime.now().truncatedTo(ChronoUnit.SECONDS) + " " + this.getNavn()
-								+ " (kokk) legger på hamburger " + hamburger.toString() + ". " + brett.toString());
-						brett.notify();
-					} else {
+					while (brett.erFull()) {
 						System.out.println(LocalTime.now().truncatedTo(ChronoUnit.SECONDS) + " " + this.getNavn()
 								+ " (kokk) klar med hamburger, men brett fullt. Venter!");
 						brett.wait();
+
 					}
+					Hamburger hamburger = new Hamburger();
+					brett.leggTil(hamburger);
+					System.out.println(LocalTime.now().truncatedTo(ChronoUnit.SECONDS) + " " + this.getNavn()
+							+ " (kokk) legger på hamburger " + hamburger.toString() + ". " + brett.toString());
+					brett.notify();
+
 				} catch (InterruptedException e) {
 				}
 			}
