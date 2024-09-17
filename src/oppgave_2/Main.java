@@ -1,5 +1,7 @@
 package oppgave_2;
 
+import java.util.Arrays;
+
 public class Main {
 	static final String[] kokker = { "Anne", "Erik", "Knut" };
 	static final String[] servitorer = { "Mia", "Per" };
@@ -17,8 +19,13 @@ public class Main {
 		}
 	}
 
-	private static void skrivUtHeader(String[] kokker, String[] servitorer, int kapasitet) {
-		System.out.println("La kaoset begynne");
+	private static void skrivUtHeader() {
+		System.out.println(
+			"I denne simuleringen har vi\n"
+			+ kokker.length + " kokker " + Arrays.toString(kokker) + "\n"
+			+ servitorer.length + " servitører " + Arrays.toString(servitorer) + "\n"
+			+ "Kapasiteten er " + KAPASITET + "\n"
+			+ "La kaoset begynne!\n"
+		);
 	}
-
 }
